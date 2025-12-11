@@ -11,7 +11,26 @@ const UrlSchema=new Schema({
     originalUrl:{
         type:String,
         required:true,
-    }
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now,
+    },
+    expireAt:{
+        type:Date,
+        default:null,
+    },
+    status:{
+        type:String,
+        enum:['active','inactive'],
+        default:'active',
+    },
+    visit:[{
+        timestamp:{
+            type: Date,
+            default: Date.now,
+        }
+    }]
 });
 
 const Url=mongoose.model("Url",UrlSchema);
