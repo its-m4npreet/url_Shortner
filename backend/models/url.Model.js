@@ -18,7 +18,7 @@ const UrlSchema=new Schema({
     },
     expireAt:{
         type:Date,
-        default:null,
+        default:() => new Date(Date.now() + 24 * 60 * 60 * 1000),
     },
     status:{
         type:String,
