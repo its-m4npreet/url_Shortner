@@ -1,13 +1,14 @@
 import './App.css'
+import { Navbar } from './components/navbar'
+import { MainCompo } from './components/mainCompo'
 
 function App() {
 
   return (
-    <>
-      <div className="text-center text-3xl font-bold underline text-blue-600">
-        Hello world!
-      </div>
-    </>
+    <div className="min-h-screen bg-[#030303]">
+      <Navbar />
+      <MainCompo />
+    </div>
   )
 }
 
