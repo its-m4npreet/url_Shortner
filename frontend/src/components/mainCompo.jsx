@@ -12,7 +12,7 @@ export const MainCompo = () => {
     <div className="flex flex-col items-center justify-center px-4 py-16 max-w-4xl mx-auto">
       {/* Heading */}
       <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-        Shorten Your Loooong Links :)
+        Shorten Your Loooong Links 
       </h1>
 
       {/* Paragraph */}
@@ -22,7 +22,7 @@ export const MainCompo = () => {
 
       {/* Search Bar */}
       <div className="w-full max-w-2xl relative">
-        <div className="flex items-center bg-gray-100 dark:bg-transparent rounded-full px-5 py-3 border border-gray-300 dark:border-gray-700 focus-within:border-blue-500 transition-colors">
+        <div className="flex items-center bg-gray-100 dark:bg-transparent rounded-full px-4 py-3 border border-gray-300 dark:border-gray-700 focus-within:border-blue-500 transition-colors">
           <svg 
             className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3" 
             fill="none" 

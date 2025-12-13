@@ -3,10 +3,8 @@ import { IoMoon } from "react-icons/io5";
 import { FiSun } from "react-icons/fi";
 import { useTheme } from '../context/ThemeContext';
 import { MdHistory } from "react-icons/md";
-import { TiInfoLarge } from "react-icons/ti";
 
-
-export const Navbar = ({ onInfoClick }) => {
+export const Navbar = ({ onHistoryClick }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const { isDarkMode, toggleTheme } = useTheme();
 
@@ -80,18 +78,13 @@ export const Navbar = ({ onInfoClick }) => {
 
             {/* users history */}
              <button
+              onClick={onHistoryClick}
               className="p-2 border border-gray-300 dark:border-gray-500 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 cursor-pointer text-gray-700 dark:text-white"
               aria-label="User History">
                 <MdHistory />
             </button>
 
-              {/* how to use information */}
-             <button
-              onClick={onInfoClick}
-              className="p-2 border border-gray-300 dark:border-gray-500 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 cursor-pointer text-gray-700 dark:text-white"
-              aria-label="How to Use">
-                <TiInfoLarge />
-            </button>
+             
             </div>
           )}
         </div>
