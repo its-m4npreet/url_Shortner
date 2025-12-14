@@ -9,26 +9,22 @@ import { HistorySidebar } from './components/HistorySidebar'
 
 function App() {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-  const [urlHistory, setUrlHistory] = useState([
-    // Sample data - replace with actual data from your backend
-    {
-      shortUrl: 'https://short.ly/abc123',
-      originalUrl: 'https://www.example.com/very/long/url/that/needs/shortening',
-      timestamp: '2 hours ago',
-      expiresIn: '24h'
-    },
-    {
-      shortUrl: 'https://short.ly/xyz789',
-      originalUrl: 'https://www.another-example.com/another/very/long/url',
-      timestamp: '5 hours ago',
-      expiresIn: '12h'
-    }
-  ]);
+  const [urlHistory, setUrlHistory] = useState([]);
+
+  const addToHistory = (shortUrl, originalUrl, expiresHours) => {
+    const newEntry = {
+      shortUrl,
+      originalUrl,
+      timestamp: new Date().toLocaleString(),
+      expiresIn: expiresHours === '1' ? '1h' : expiresHours === '6' ? '6h' : expiresHours === '12' ? '12h' : '24h'
+    };
+    setUrlHistory(prev => [newEntry, ...prev]);
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#030303] transition-colors duration-300">
       <Navbar onHistoryClick={() => setIsHistoryOpen(true)} />
-      <MainCompo />
+      <MainCompo onUrlShortened={addToHistory} />
       <Features />
       <Footer />
       <HistorySidebar 

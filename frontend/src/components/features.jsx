@@ -12,7 +12,7 @@ export const Features = () => {
         </p>
 
         {/* Steps Section */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Step 1 */}
                     <div className="bg-white dark:bg-[#030303] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 transition-all duration-300">
             <div className="flex items-start gap-4">
@@ -26,7 +26,7 @@ export const Features = () => {
                 </p>
                 <div className=" bg-gray-100 dark:bg-[#030303] rounded-lg p-4 border border-gray-200 dark:border-gray-700 overflow-x-hidden">
                   <code className="text-blue-400 text-sm ">
-                    Example: https://www.example.com/very/long/url/...
+                    Example: https://www.example.com/v...
                   </code>
                 </div>
               </div>
