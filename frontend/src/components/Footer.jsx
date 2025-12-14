@@ -110,14 +110,14 @@ export const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://x.com/m4npreet006"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                 aria-label="Twitter"
               >
                <FaXTwitter className="text-[#242424] dark:text-white" />
               </a>
               <a
-                href="#"
+                href="https://github.com/its-m4npreet"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                 aria-label="GitHub"
               >
@@ -125,7 +125,7 @@ export const Footer = () => {
 
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/manpreet-730575365/"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                 aria-label="LinkedIn"
               >

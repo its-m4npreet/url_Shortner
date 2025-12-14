@@ -1,21 +1,46 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoMoon } from "react-icons/io5";
-import { FiSun } from "react-icons/fi";
+import { FiSun, FiLogOut } from "react-icons/fi";
 import { useTheme } from '../context/ThemeContext';
 import { MdHistory } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
 
-export const Navbar = ({ onHistoryClick }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+export const Navbar = ({ onHistoryClick, isLoggedIn, user, onLogout }) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
   const { isDarkMode, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    if (showDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDropdown]);
 
   const handleLogin = () => {
-    // Add your login logic here
-    console.log('Login clicked');
+    navigate('/login');
   };
 
   const handleSignup = () => {
-    // Add your signup logic here
-    console.log('Signup clicked');
+    navigate('/signup');
+  };
+
+  const handleLogout = () => {
+    setShowDropdown(false);
+    onLogout();
+    navigate('/');
   };
 
   return (
@@ -23,9 +48,9 @@ export const Navbar = ({ onHistoryClick }) => {
       <div className="px-6 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
             Shortly
-          </h1>
+          </Link>
         </div>
 
         {/* Right Section - Auth or Theme Toggle */}
@@ -84,6 +109,38 @@ export const Navbar = ({ onHistoryClick }) => {
                 <MdHistory />
             </button>
 
+            {/* User Profile Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all duration-200"
+                aria-label="User menu"
+              >
+                {user?.name?.charAt(0).toUpperCase() || <FaUser className="w-4 h-4" />}
+              </button>
+
+              {/* Dropdown Menu */}
+              {showDropdown && (
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-[#0a0a0a] rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50">
+                  {/* User Info */}
+                  <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center ">
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">
+                     {user?.name}
+                    </p>
+                    
+                  </div>
+
+                  {/* Logout Button */}
+                  <button
+                    onClick={handleLogout}
+                    className="w-full px-4 py-3 text-left text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-[#ff02021a] transition-colors flex items-center gap-2 rounded-b-lg"
+                  >
+                    <FiLogOut className="w-4 h-4" />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
              
             </div>
           )}

@@ -1,15 +1,41 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/navbar'
-import { MainCompo } from './components/mainCompo'
-import { Features } from './components/features'
-import { Footer } from './components/Footer'
+import { HomePage } from './pages/HomePage'
+import { Login } from './components/Login'
+import { Signup } from './components/Signup'
 import { HistorySidebar } from './components/HistorySidebar'
-// import { HowToUse } from './components/HowToUse'
 
 function App() {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [urlHistory, setUrlHistory] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  // Check authentication status on mount
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userData = localStorage.getItem('user');
+    if (token && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+    }
+  }, []);
+
+  const handleAuthSuccess = (token, userData) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(userData));
+    setIsLoggedIn(true);
+    setUser(userData);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+    setUser(null);
+  };
 
   const addToHistory = (shortUrl, originalUrl, expiresHours) => {
     const newEntry = {
@@ -22,17 +48,26 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#030303] transition-colors duration-300">
-      <Navbar onHistoryClick={() => setIsHistoryOpen(true)} />
-      <MainCompo onUrlShortened={addToHistory} />
-      <Features />
-      <Footer />
-      <HistorySidebar 
-        isOpen={isHistoryOpen} 
-        onClose={() => setIsHistoryOpen(false)}
-        historyData={urlHistory}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-white dark:bg-[#030303] transition-colors duration-300">
+        <Navbar 
+          onHistoryClick={() => setIsHistoryOpen(true)} 
+          isLoggedIn={isLoggedIn}
+          user={user}
+          onLogout={handleLogout}
+        />
+        <Routes>
+          <Route path="/" element={<HomePage onUrlShortened={addToHistory} />} />
+          <Route path="/login" element={<Login onAuthSuccess={handleAuthSuccess} />} />
+          <Route path="/signup" element={<Signup onAuthSuccess={handleAuthSuccess} />} />
+        </Routes>
+        <HistorySidebar 
+          isOpen={isHistoryOpen} 
+          onClose={() => setIsHistoryOpen(false)}
+          historyData={urlHistory}
+        />
+      </div>
+    </BrowserRouter>
   )
 }
 
