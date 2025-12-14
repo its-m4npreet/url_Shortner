@@ -61,7 +61,7 @@ export const MainCompo = ({ onUrlShortened }) => {
 
       {/* Paragraph */}
       <p className="text-gray-600 dark:text-gray-400 text-center mb-8 max-w-xl">
-        Shortly is an efficient and easy-to-use URL shortening service that streamlines your online experience.
+        Shorrtly is an efficient and easy-to-use URL shortening service that streamlines your online experience.
       </p>
 
       {/* Search Bar */}

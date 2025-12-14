@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Shortly</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Shorrtly</h2>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               The fastest and most reliable URL shortening service for your links.
             </p>
@@ -104,7 +104,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © {currentYear} Shortly. All rights reserved.
+              © {currentYear} Shorrtly. All rights reserved.
             </p>
 
             {/* Social Links */}

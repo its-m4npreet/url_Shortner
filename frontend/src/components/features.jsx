@@ -4,7 +4,7 @@ export const Features = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <h1 className="text-5xl md:text-6xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-          How to Use Shortly
+          How to Use Shorrtly
         </h1>
         
         <p className="text-gray-600 dark:text-gray-400 text-center mb-12 text-lg">
@@ -79,7 +79,7 @@ export const Features = () => {
                 </p>
                 <div className="bg-gray-100 dark:bg-[#030303] rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                   <code className="text-green-400 text-sm">
-                    Result: https://shortly.app/abc123
+                    Result: https://Shorrtly.app/abc123
                   </code>
                 </div>
               </div>

@@ -49,7 +49,7 @@ export const Navbar = ({ onHistoryClick, isLoggedIn, user, onLogout }) => {
         {/* Logo Section */}
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
-            Shortly
+            Shorrtly
           </Link>
         </div>
 
