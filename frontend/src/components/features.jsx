@@ -47,11 +47,11 @@ export const Features = () => {
                 <ul className="text-gray-600 dark:text-gray-400 space-y-2 ml-6">
                   <li className="flex items-center gap-2">
                     <span className="text-blue-400">•</span>
-                    1 hour - Perfect for temporary shares
+                    1 hour - for temporary shares
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-purple-400">•</span>
-                    6 hours - Good for short-term campaigns
+                    6 hours - for short-term campaigns
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-pink-400">•</span>
