@@ -9,17 +9,17 @@ export default defineConfig({
     proxy: {
       // Proxy auth requests to backend
       '/auth': {
-        target: 'http://localhost:3000',
+        target: 'https://url-shortner-s7at.onrender.com/',
         changeOrigin: true,
       },
       // Proxy API requests to backend (adjust port if needed)
       '/generate': {
-        target: 'http://localhost:3000',
+        target: 'https://url-shortner-s7at.onrender.com/',
         changeOrigin: true,
       },
       // Proxy redirect paths like /:id as-is to backend
       '^/(?:[a-zA-Z0-9_-]{5,})$': {
-        target: 'http://localhost:3000',
+        target: 'https://url-shortner-s7at.onrender.com/',
         changeOrigin: true,
       },
     },

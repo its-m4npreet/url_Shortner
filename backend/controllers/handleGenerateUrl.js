@@ -26,7 +26,7 @@ const handleGenerateUrl = async(req,res) =>{
         }
         );
         return res.status(201).json({
-            shortUrl: `http://localhost:3000/${newUrl.shortId}`,
+            shortUrl: `https://url-shortner-s7at.onrender.com/${newUrl.shortId}`,
             originalUrl: newUrl.originalUrl,
         });
     }
