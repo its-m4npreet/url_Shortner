@@ -27,8 +27,9 @@ export const MainCompo = ({ onUrlShortened }) => {
       const hours = Number(expiresHours) || 24;
       const expireAt = new Date(Date.now() + hours * 60 * 60 * 1000).toISOString();
 
-      // Use relative path to work with Vite proxy
-      const res = await fetch('/generate', {
+      // Use absolute backend URL
+      const backendUrl = import.meta.env.VITE_BACKEND_URL ;
+      const res = await fetch(`${backendUrl}/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ originalUrl: url.trim(), expireAt })

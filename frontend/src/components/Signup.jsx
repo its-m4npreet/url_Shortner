@@ -41,7 +41,8 @@ export const Signup = ({ onAuthSuccess }) => {
 
     try {
       setLoading(true);
-      const res = await fetch('/auth/signup', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL ;
+      const res = await fetch(`${backendUrl}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
