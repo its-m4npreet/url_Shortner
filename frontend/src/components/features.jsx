@@ -16,9 +16,6 @@ export const Features = () => {
           {/* Step 1 */}
                     <div className="bg-white dark:bg-[#030303] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 transition-all duration-300">
             <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                1
-              </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Click "Shorten Now!"</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -36,9 +33,6 @@ export const Features = () => {
           {/* Step 2 */}
           <div className="bg-white dark:bg-[#030303] rounded-2xl p-8 border border-gray-200 dark:border-gray-800  transition-all duration-300">
             <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                2
-              </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Set Expiration Time</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -69,9 +63,6 @@ export const Features = () => {
           {/* Step 3 */}
           <div className="bg-white dark:bg-[#030303] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 transition-all duration-300">
             <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                3
-              </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Click "Shorten Now!"</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -89,9 +80,6 @@ export const Features = () => {
           {/* Step 4 */}
           <div className="bg-white dark:bg-[#030303] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 transition-all duration-300">
             <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-full  flex items-center justify-center text-white font-bold text-xl">
-                4
-              </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Copy & Share</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
