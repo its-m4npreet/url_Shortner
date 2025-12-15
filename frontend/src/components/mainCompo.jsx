@@ -68,7 +68,7 @@ export const MainCompo = ({ onUrlShortened }) => {
       {/* Search Bar */}
       <div className="w-full max-w-2xl relative px-0">
         <div className="flex flex-col sm:flex-row items-center bg-gray-100 dark:bg-transparent rounded-lg sm:rounded-full px-3 sm:px-4 py-3 border border-gray-300 dark:border-gray-700 focus-within:border-blue-500 transition-colors gap-2 sm:gap-0">
-          <FaLink className='hidden sm:block text-[#242424] dark:text-white flex-shrink-0'/>
+          <FaLink className='hidden sm:block text-[#242424] dark:text-white flex-shrink-0 mr-1'/>
           <input
             type="url"
             value={url}
@@ -114,7 +114,7 @@ export const MainCompo = ({ onUrlShortened }) => {
         {shortUrl && (
           <div className="mt-6 text-center px-2">
             <p className="text-gray-700 dark:text-gray-300 text-sm">Your shortened link:</p>
-            <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
+            <div className="mt-2 flex flex-row items-center justify-center gap-2 sm:gap-0">
             <a
               href={shortUrl}
               target="_blank"

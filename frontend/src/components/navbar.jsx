@@ -47,11 +47,11 @@ export const Navbar = ({ onHistoryClick, isLoggedIn, user, onLogout }) => {
   };
 
   return (
-    <nav className="w-full bg-white dark:bg-[#030303] border-b border-gray-200 dark:border-gray-800">
+    <nav className="w-full bg-white dark:bg-[#030303] ">
       <div className="px-4 sm:px-6 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center">
-          <Link to="/" className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+          <Link to="/" className="text-xl sm:text-2xl font-bold text-[#242424] dark:text-white ">
             Shorrtly
           </Link>
         </div>
