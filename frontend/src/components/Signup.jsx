@@ -70,32 +70,32 @@ export const Signup = ({ onAuthSuccess }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-white dark:bg-[#030303]">
+    <div className="min-h-screen flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12 bg-white dark:bg-[#030303]">
       <div className="w-full max-w-md">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
             Create Account
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
             Sign up to start shortening your URLs
           </p>
         </div>
 
         {/* Form */}
-        <div className="bg-gray-50 dark:bg-[#0a0a0a] rounded-2xl p-8 border border-gray-200 dark:border-gray-800">
-          <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="bg-gray-50 dark:bg-[#0a0a0a] rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-800">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             {/* Name Field */}
             <div>
               <label 
                 htmlFor="name" 
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Full Name
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaUser className="text-gray-400 dark:text-gray-500" />
+                  <FaUser className="text-gray-400 dark:text-gray-500 text-sm" />
                 </div>
                 <input
                   type="text"
@@ -104,7 +104,7 @@ export const Signup = ({ onAuthSuccess }) => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                 />
               </div>
             </div>
@@ -113,13 +113,13 @@ export const Signup = ({ onAuthSuccess }) => {
             <div>
               <label 
                 htmlFor="email" 
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Email Address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="text-gray-400 dark:text-gray-500" />
+                  <FaEnvelope className="text-gray-400 dark:text-gray-500 text-sm" />
                 </div>
                 <input
                   type="email"
@@ -128,7 +128,7 @@ export const Signup = ({ onAuthSuccess }) => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                 />
               </div>
             </div>
@@ -137,13 +137,13 @@ export const Signup = ({ onAuthSuccess }) => {
             <div>
               <label 
                 htmlFor="password" 
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="text-gray-400 dark:text-gray-500" />
+                  <FaLock className="text-gray-400 dark:text-gray-500 text-sm" />
                 </div>
                 <input
                   type="password"
@@ -152,7 +152,7 @@ export const Signup = ({ onAuthSuccess }) => {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="At least 6 characters"
-                  className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                 />
               </div>
             </div>
@@ -161,13 +161,13 @@ export const Signup = ({ onAuthSuccess }) => {
             <div>
               <label 
                 htmlFor="confirmPassword" 
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Confirm Password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="text-gray-400 dark:text-gray-500" />
+                  <FaLock className="text-gray-400 dark:text-gray-500 text-sm" />
                 </div>
                 <input
                   type="password"
@@ -176,26 +176,26 @@ export const Signup = ({ onAuthSuccess }) => {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   placeholder="Confirm your password"
-                  className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white dark:bg-[#030303] border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
                 />
               </div>
             </div>
 
             {/* Terms Checkbox */}
-            <div className="flex items-start">
+            <div className="flex items-start gap-2 text-xs sm:text-sm">
               <input
                 type="checkbox"
                 id="terms"
-                className="w-4 h-4 mt-1 rounded accent-blue-600"
+                className="w-4 h-4 mt-1 rounded accent-blue-600 flex-shrink-0"
                 required
               />
-              <label htmlFor="terms" className="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              <label htmlFor="terms" className="text-gray-600 dark:text-gray-400">
                 I agree to the{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-700 dark:text-blue-400">
+                <a href="#" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 break-words">
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-700 dark:text-blue-400">
+                <a href="#" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 break-words">
                   Privacy Policy
                 </a>
               </label>
@@ -203,21 +203,21 @@ export const Signup = ({ onAuthSuccess }) => {
 
             {/* Error Message */}
             {error && (
-              <p className="text-red-500 text-sm text-center">{error}</p>
+              <p className="text-red-500 text-xs sm:text-sm text-center">{error}</p>
             )}
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-200"
+              className="w-full py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-200 text-sm sm:text-base"
             >
               {loading ? 'Creating account...' : 'Sign Up'}
             </button>
           </form>
 
           {/* Login Link */}
-          <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-5 sm:mt-6 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
             Already have an account?{' '}
             <Link to="/login" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
               Login
